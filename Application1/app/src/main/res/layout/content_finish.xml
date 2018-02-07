@@ -8,6 +8,11 @@
     tools:context="be.ehb.elviraiskhakova.application1.FinishActivity"
     tools:showIn="@layout/activity_finish">
 
+    <nl.dionsegijn.konfetti.KonfettiView
+        android:id="@+id/konfettiView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <TextView
         android:layout_width="300dp"
         android:layout_height="wrap_content"
