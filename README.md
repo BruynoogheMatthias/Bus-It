@@ -25,10 +25,9 @@ Locations on campus
 
 Puzzles
 -Count stuff (like letters on a sign (of a certain kind))
--ask funny questions about the week
--scan qr's in a certain order
+-Ask funny questions about the week
+-Scan qr's in a certain order
 -Find a place based on a picture (popup challenge after 10 minutes, 5 minutes time to complete)
-
 
 
 Optional:
