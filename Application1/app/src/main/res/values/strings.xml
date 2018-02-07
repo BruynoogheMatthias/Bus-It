@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Application1</string>
+    <string name="action_settings">Settings</string>
+    <string name="introduction_title">BusIT Week in Brno</string>
+    <string name="start">START</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_simple_puzzle">SimplePuzzleActivity</string>
+    <string name="title_activity_text_select">TextSelectActivity</string>
+    <string name="title_activity_image_select">ImageSelectActivity</string>
+    <string name="title_activity_finish">FinishActivity</string>
+</resources>
