@@ -25,21 +25,11 @@ Locations on campus
 
 Puzzles
 -Count stuff (like letters on a sign (of a certain kind))
--ask funny questions about hte week
+-ask funny questions about the week
 -scan qr's in a certain order
+-Find a place based on a picture (popup challenge after 10 minutes, 5 minutes time to complete)
 
-thoughts
 
-points of interest:
-- Cathedral of St. Peter
-- Villa Tugendhat
-- Spilberk Castle
-- Namesti Svobody
-- Old town hall
-- St. Jacob's Church
-- Capuchin Monastery 
-- Brno astronomical clock
-- Botanicka Zahrada 
 
 Optional:
 - points leaderboard
