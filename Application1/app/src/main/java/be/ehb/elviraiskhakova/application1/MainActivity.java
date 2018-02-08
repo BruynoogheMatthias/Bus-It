@@ -68,11 +68,11 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Guide");
         builder.setMessage("Rules:\n\n" +
-                "- Get 500 points \n" +
-                "- Best time wins\n" +
-                "- 3\n" +
-                "__________\n" +
-                "- \n"
+                "- Get 500 points to finish the game\n" +
+                "- Get points by completing puzzles at the markers\n"+
+                "- Blue Marker = 50 points\n" +
+                "- Yellow Marker = 100 points\n" +
+                "- Red Marker = 150 points\n"
         );
         builder.setCancelable(true);
         builder.setPositiveButton("Close", new DialogInterface.OnClickListener() {
