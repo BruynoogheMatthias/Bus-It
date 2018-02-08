@@ -39,8 +39,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="top|left"
-        android:textSize="20sp"
+        android:textSize="30sp"
+        android:textColor="@android:color/black"
+        android:shadowColor="@android:color/white"
         android:text="Points: "/>
+
+    <TextView
+        android:id="@+id/clock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center"
+        android:textSize="20sp"
+        android:tooltipText="16:20"
+        android:textColor="@android:color/black"
+        android:backgroundTint="@android:color/white" />
 
 </android.support.design.widget.CoordinatorLayout>
 
