@@ -10,15 +10,15 @@ import cz.mendelu.busItWeek.library.builder.StoryLineBuilder;
 public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
 
     public MyDemoStoryLineDBHelper() {
-        super(55);
+        super(56);
     }
 
     @Override
     protected void onCreate(StoryLineBuilder builder) {
       builder.addGPSTask("1")
-                .radius(5000)
+                .radius(5)
                 .location(49.210967, 16.616488)
-                .victoryPoints(500)
+                .victoryPoints(50)
                 .simplePuzzle()
                 .question("Which animal likes to be here?")
                 .answer("Rabbit")
@@ -62,6 +62,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .hint("Hint here") //no images possible, just strings , for image use .hint("imagename")
                 .puzzleDone()
                 .taskDone();
+
         builder.addGPSTask("5")
                 .location(49.210874, 16.614810)
                 .victoryPoints(100)
@@ -114,16 +115,16 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .puzzleDone()
                 .taskDone();
 
-
+/*
         builder.addCodeTask("9")
                 .qr("http://techdrev.ldf.mendelu.cz/cz/vyma/pedo/loma/pdk-p/p090")
                .location( 49.212015, 16.616999)
                // .location(49.209622, 16.614988)
                 .victoryPoints(50)
                 .taskDone();
+*/
 
-
-        builder.addBeaconTask("10")
+        builder.addBeaconTask("9")
                 .location(49.210542, 16.614825)
                 .beacon(52307, 40318)
                 .taskDone();
