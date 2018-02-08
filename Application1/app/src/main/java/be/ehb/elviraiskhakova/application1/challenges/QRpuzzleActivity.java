@@ -1,5 +1,6 @@
 package be.ehb.elviraiskhakova.application1.challenges;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,8 +9,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import be.ehb.elviraiskhakova.application1.R;
+import cz.mendelu.busItWeek.library.CodeTask;
+import cz.mendelu.busItWeek.library.StoryLine;
+import cz.mendelu.busItWeek.library.Task;
+import cz.mendelu.busItWeek.library.qrcode.QRCodeUtil;
 
 public class QRpuzzleActivity extends AppCompatActivity {
+
+    private StoryLine storyLine;
+    private Task currentTask;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +35,24 @@ public class QRpuzzleActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    public void scanForQRCode(View view) {
+        QRCodeUtil.startQRScan(this);
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        currentTask = storyLine.currentTask();
+        if (currentTask != null && currentTask instanceof CodeTask) {
+            String result = QRCodeUtil.onScanResult(this, requestCode, resultCode, data);
+            CodeTask codeTask = (CodeTask) currentTask;
+            if (codeTask.getQR().equals(result)) {
+                // go back to map
+            }
+        }
     }
 
 }
