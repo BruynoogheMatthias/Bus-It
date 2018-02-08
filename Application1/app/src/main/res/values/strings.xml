@@ -8,4 +8,7 @@
     <string name="title_activity_text_select">TextSelectActivity</string>
     <string name="title_activity_image_select">ImageSelectActivity</string>
     <string name="title_activity_finish">FinishActivity</string>
+    <string name="title_activity_qrpuzzle">QRpuzzleActivity</string>
+    <string name="title_activity_picture">PictureActivity</string>
+    <string name="title_activity_beacon_guide">Map</string>
 </resources>

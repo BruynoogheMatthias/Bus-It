@@ -1,103 +1,109 @@
-package be.ehb.elviraiskhakova.application1;
+package be.ehb.elviraiskhakova.application1.challenges;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import cz.mendelu.busItWeek.library.ChoicePuzzle;
-import cz.mendelu.busItWeek.library.SimplePuzzle;
+import be.ehb.elviraiskhakova.application1.MyDemoStoryLineDBHelper;
+import be.ehb.elviraiskhakova.application1.R;
+import cz.mendelu.busItWeek.library.ImageSelectPuzzle;
 import cz.mendelu.busItWeek.library.StoryLine;
 import cz.mendelu.busItWeek.library.Task;
 
-public class TextSelectActivity extends AppCompatActivity {
+public class ImageSelectActivity extends AppCompatActivity {
 
+    private TextView counter;
     private TextView question;
-    private RecyclerView answersList;
-    private List<String> answers;
+    private RecyclerView imageList;
     private StoryLine storyLine;
     private Task currentTask;
-    private ChoicePuzzle puzzle;
+    private ImageSelectPuzzle puzzle;
+    private List<Integer> answers;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_text_select);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.activity_image_select);
 
-        question = findViewById(R.id.question);
+        counter = (TextView) findViewById(R.id.counter);
+        question = (TextView) findViewById(R.id.question);
+        imageList = (RecyclerView) findViewById(R.id.imageList);
 
         storyLine = StoryLine.open(this, MyDemoStoryLineDBHelper.class);
+
         currentTask = storyLine.currentTask();
-        puzzle = (ChoicePuzzle) currentTask.getPuzzle();
+        puzzle = (ImageSelectPuzzle) currentTask.getPuzzle();
         question.setText(puzzle.getQuestion());
 
-        answersList = findViewById(R.id.answers_list);
-        AnswersAdapter adapter = new AnswersAdapter();
+//        Toast.makeText(this, "Ok", Toast.LENGTH_SHORT).show();
+
+
+        imageList = findViewById(R.id.imageList);
+        ImageSelectListAdapter adapter = new ImageSelectListAdapter();
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        answersList.setLayoutManager(layoutManager);
-        answersList.setAdapter(adapter);
+        imageList.setLayoutManager(layoutManager);
+        imageList.setAdapter(adapter);
+        imageList.setNestedScrollingEnabled(false);
 
         answers = new ArrayList<>();
-        // answers.add("trezrh");
-        for (Map.Entry<String, Boolean> entry : puzzle.getChoices().entrySet()) {
+
+        for (Map.Entry<Integer, Boolean> entry : puzzle.getImages().entrySet()) {
             answers.add(entry.getKey());
         }
         adapter.notifyDataSetChanged();
-
-
-    }
-
-
-    public void answerQuestion(View view) {
 
     }
 
     public class AnswerViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView answer;
+        public ImageView answer;
 
         public AnswerViewHolder(View itemView) {
             super(itemView);
-            answer = itemView.findViewById(R.id.answer);
+            answer = itemView.findViewById(R.id.image);
         }
     }
 
-    public class AnswersAdapter extends RecyclerView.Adapter<AnswerViewHolder> {
+    private class ImageSelectListAdapter extends RecyclerView.Adapter<AnswerViewHolder> {
+
 
         @Override
         public AnswerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_text_choice, parent, false);
+            View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_image_select_list, parent, false);
             return new AnswerViewHolder(itemView);
         }
 
         @Override
         public void onBindViewHolder(final AnswerViewHolder holder, final int position) {
-            final String answer = answers.get(position);
-            holder.answer.setText(answer);
+            Integer answer = answers.get(position);
+            Picasso.with(ImageSelectActivity.this)
+                    .load(answer)
+                    .into(holder.answer);
+
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (puzzle.getAnswerForChoice(holder.getAdapterPosition())) {
+                    if (puzzle.getAnswerForImage(holder.getAdapterPosition())) {
                         //correct answer
                         currentTask.finish(true);
                         finish();
                     } else {
                         // wrong answer
-                        Toast.makeText(TextSelectActivity.this, "Wrong answer"
+                        Toast.makeText(ImageSelectActivity.this, "Wrong answer"
                                 + "", Toast.LENGTH_SHORT).show();
                     }
 
@@ -108,8 +114,12 @@ public class TextSelectActivity extends AppCompatActivity {
 
         @Override
         public int getItemCount() {
+            if (answers == null) {
+                answers = new ArrayList<>();
+            }
             return answers.size();
         }
     }
-
 }
+
+

@@ -33,6 +33,9 @@ import com.google.maps.android.SphericalUtil;
 import java.util.HashMap;
 import java.util.Map;
 
+import be.ehb.elviraiskhakova.application1.challenges.ImageSelectActivity;
+import be.ehb.elviraiskhakova.application1.challenges.SimplePuzzleActivity;
+import be.ehb.elviraiskhakova.application1.challenges.TextSelectActivity;
 import cz.mendelu.busItWeek.library.BeaconTask;
 import cz.mendelu.busItWeek.library.ChoicePuzzle;
 import cz.mendelu.busItWeek.library.CodeTask;

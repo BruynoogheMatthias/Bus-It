@@ -1,4 +1,4 @@
-package be.ehb.elviraiskhakova.application1;
+package be.ehb.elviraiskhakova.application1.challenges;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import be.ehb.elviraiskhakova.application1.MyDemoStoryLineDBHelper;
+import be.ehb.elviraiskhakova.application1.R;
 import cz.mendelu.busItWeek.library.Puzzle;
 import cz.mendelu.busItWeek.library.SimplePuzzle;
 import cz.mendelu.busItWeek.library.StoryLine;

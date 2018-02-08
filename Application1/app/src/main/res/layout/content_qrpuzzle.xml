@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="be.ehb.elviraiskhakova.application1.challenges.ImageSelectActivity"
-    tools:showIn="@layout/activity_image_select">
+    tools:context="be.ehb.elviraiskhakova.application1.challenges.QRpuzzleActivity"
+    tools:showIn="@layout/activity_qrpuzzle">
 
 </android.support.constraint.ConstraintLayout>
