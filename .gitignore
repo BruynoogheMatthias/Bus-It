@@ -22,3 +22,5 @@ Application1/gradlew
 Application1/gradlew\.bat
 
 Application1/engine/build\.gradle
+
+Application1/app/src/main/res/values/google_maps_api.xml
