@@ -70,9 +70,8 @@
             android:name=".BeaconGuideActivity"
             android:label="@string/title_activity_beacon_guide" />
         <activity
-            android:name=".challenges.SimpleQuestionPuzzleActivity"
-            android:label="@string/title_activity_simple_question_puzzle"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:name=".MapsGameActivity"
+            android:label="@string/title_activity_maps_game"></activity>
     </application>
 
 </manifest>

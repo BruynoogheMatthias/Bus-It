@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Application1</string>
     <string name="action_settings">Settings</string>
-    <string name="introduction_title">BusIT Week in Brno</string>
+    <string name="introduction_title">Campus Race</string>
     <string name="start">START</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_simple_puzzle">SimplePuzzleActivity</string>
@@ -11,5 +11,5 @@
     <string name="title_activity_qrpuzzle">QRpuzzleActivity</string>
     <string name="title_activity_picture">PictureActivity</string>
     <string name="title_activity_beacon_guide">Map</string>
-    <string name="title_activity_simple_question_puzzle">SimpleQuestionPuzzleActivity</string>
+    <string name="title_activity_maps_game">Map</string>
 </resources>
