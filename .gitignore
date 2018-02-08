@@ -12,3 +12,11 @@ Application1/\.idea/modules\.xml
 Application1/\.idea/runConfigurations\.xml
 
 Application1/gradle/wrapper/gradle-wrapper\.properties
+
+Application1/build\.gradle
+
+Application1/gradle/wrapper/gradle-wrapper\.jar
+
+Application1/gradlew
+
+Application1/gradlew\.bat
