@@ -10,13 +10,13 @@ import cz.mendelu.busItWeek.library.builder.StoryLineBuilder;
 public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
 
     public MyDemoStoryLineDBHelper() {
-        super(39);
+        super(51);
     }
 
     @Override
     protected void onCreate(StoryLineBuilder builder) {
-        builder.addGPSTask("1")
-                .radius(10)
+      builder.addGPSTask("1")
+                .radius(5)
                 .location(49.210967, 16.616488)
                 .victoryPoints(50)
                 .simplePuzzle()
@@ -29,8 +29,8 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
 
         builder.addGPSTask("2")
                 .location(49.210226, 16.614987)
-                .victoryPoints(50)
-                .radius(2)
+                .victoryPoints(5)
+                .radius(50)
                 .imageSelectPuzzle()
                 .addImage(R.drawable.plaats1_1, false)
                 .addImage(R.drawable.plaats1_2, false)
@@ -100,8 +100,9 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .taskDone();
 
         builder.addGPSTask("8")
-                .radius(2)
-                .location( 49.212015, 16.616999)
+                .radius(5)
+               // .location(49.209622, 16.614988)
+               .location( 49.212015, 16.616999)
                 .victoryPoints(50)
                 .simplePuzzle()
                 .question("5 years ago Ann was 5 times as old as her nephew.\n" +
@@ -115,10 +116,10 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .taskDone();
 
 
-
         builder.addCodeTask("9")
                 .qr("http://techdrev.ldf.mendelu.cz/cz/vyma/pedo/loma/pdk-p/p090")
-                .location( 49.212015, 16.616999)
+               .location( 49.212015, 16.616999)
+               // .location(49.209622, 16.614988)
                 .victoryPoints(50)
                 .taskDone();
 

@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -46,6 +47,7 @@ import cz.mendelu.busItWeek.library.Puzzle;
 import cz.mendelu.busItWeek.library.SimplePuzzle;
 import cz.mendelu.busItWeek.library.StoryLine;
 import cz.mendelu.busItWeek.library.Task;
+import cz.mendelu.busItWeek.library.TaskStatus;
 import cz.mendelu.busItWeek.library.beacons.BeaconDefinition;
 import cz.mendelu.busItWeek.library.beacons.BeaconUtil;
 import cz.mendelu.busItWeek.library.map.MapUtil;
@@ -67,6 +69,7 @@ public class MapsActivity extends FragmentActivity implements
 
     private ImageButton qrButton;
     private LatLngBounds.Builder builder;
+    private TextView tvPoints;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +95,7 @@ public class MapsActivity extends FragmentActivity implements
         beaconUtil = new BeaconUtil(this);
 
         qrButton = findViewById(R.id.qr_code_button);
+        tvPoints = findViewById(R.id.tvPoints);
     }
 
 
@@ -192,7 +196,7 @@ public class MapsActivity extends FragmentActivity implements
         if (currentTask != null && currentTask instanceof GPSTask) {
             double radius = ((GPSTask) currentTask).getRadius();
             LatLng userPosition = new LatLng(location.getLatitude(), location.getLongitude());
-            LatLng taskPosition = new LatLng(location.getLatitude(), location.getLongitude());
+            LatLng taskPosition = new LatLng(currentTask.getLatitude(), currentTask.getLongitude());
             if (SphericalUtil.computeDistanceBetween(userPosition, taskPosition) < radius) {
                 // run activity
                 runPuzzleActivity(currentTask.getPuzzle());
@@ -215,6 +219,16 @@ public class MapsActivity extends FragmentActivity implements
         }
     }
 
+    private int getTotalPoints() {
+        int totalPoints = 0;
+        for(Task task : storyLine.taskList()) {
+            if(task.getTaskStatus() == TaskStatus.SUCCESS) {
+                totalPoints += task.getVictoryPoints();
+            }
+        }
+        return totalPoints;
+    }
+
     protected void onResume() {
         super.onResume();
         currentTask = storyLine.currentTask();
@@ -226,6 +240,7 @@ public class MapsActivity extends FragmentActivity implements
             initializeListeners();
             updateMarkers();
         }
+        tvPoints.setText("Points: " + String.valueOf(getTotalPoints()));
     }
 
     protected void onPause() {
@@ -310,7 +325,7 @@ public class MapsActivity extends FragmentActivity implements
 
     @Override
     public boolean onMarkerClick(Marker marker) {
-
+    /*
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Skip task?");
         builder.setMessage("Do you want to skip the current task?");
@@ -341,13 +356,29 @@ public class MapsActivity extends FragmentActivity implements
         });
 
         builder.create().show();
+        */
 
         return false;
     }
 
-    public void scanForQRCode(View view) {
-        QRCodeUtil.startQRScan(this);
-
+    public void guide(View view) {
+        //QRCodeUtil.startQRScan(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Guide");
+        builder.setMessage("Rules:\n\n" +
+                "- Complete puzzles at the markers to get points\n" +
+                "- Get 500 points to finish the game\n" +
+                "- Blue Marker = 50 points\n" +
+                "- Yellow Marker = 100 points"
+        );
+        builder.setCancelable(true);
+        builder.setPositiveButton("Close", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+                dialog.dismiss();
+            }
+        });
+        builder.create().show();
     }
 
     @Override
