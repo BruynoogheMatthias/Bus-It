@@ -69,9 +69,8 @@ public class MainActivity extends AppCompatActivity {
         builder.setTitle("Guide");
         builder.setMessage("Rules:\n\n" +
                         "- Get 500 points to finish the game\n" +
-                        "- Get points by completing puzzles at the markers\n"+
-                        "- Blue Marker = 50 points\n" +
-                        "- Yellow Marker = 100 points");
+                        "- Get points by completing puzzles at the markers");
+
         
         builder.setCancelable(true);
         builder.setPositiveButton("Close", new DialogInterface.OnClickListener() {
