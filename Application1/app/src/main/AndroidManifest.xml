@@ -48,6 +48,10 @@
             android:label="@string/title_activity_qrpuzzle"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".challenges.QrSimplePuzzleActivity"
+            android:label="@string/title_activity_qrpuzzle"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".challenges.PicturePuzzleActivity"
             android:label="@string/title_activity_picture"
             android:theme="@style/AppTheme.NoActionBar" />
