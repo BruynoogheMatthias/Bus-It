@@ -68,8 +68,8 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Guide");
         builder.setMessage("Rules:\n\n" +
+                "- Complete puzzles at the markers to get points\n"+
                 "- Get 500 points to finish the game\n" +
-                "- Get points by completing puzzles at the markers\n"+
                 "- Blue Marker = 50 points\n" +
                 "- Yellow Marker = 100 points"
         );
