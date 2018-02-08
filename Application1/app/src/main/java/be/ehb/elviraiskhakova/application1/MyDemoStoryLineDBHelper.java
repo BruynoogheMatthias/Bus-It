@@ -10,13 +10,13 @@ import cz.mendelu.busItWeek.library.builder.StoryLineBuilder;
 public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
 
     public MyDemoStoryLineDBHelper() {
-        super(34);
+        super(39);
     }
 
     @Override
     protected void onCreate(StoryLineBuilder builder) {
         builder.addGPSTask("1")
-                .radius(1000)
+                .radius(10)
                 .location(49.210967, 16.616488)
                 .victoryPoints(50)
                 .simplePuzzle()
@@ -26,7 +26,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .taskDone();
 
         builder.addGPSTask("2")
-                .radius(1000)
+                .radius(2)
                 .location(49.210333, 16.614792)
                 .victoryPoints(100)
                 .simplePuzzle()
@@ -41,7 +41,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
         builder.addGPSTask("3")
                 .location(49.210226, 16.614987)
                 .victoryPoints(50)
-                .radius(1000)
+                .radius(2)
                 .imageSelectPuzzle()
                 .addImage(R.drawable.plaats1_1, false)
                 .addImage(R.drawable.plaats1_2, false)
@@ -52,7 +52,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .taskDone();
 
         builder.addGPSTask("4")
-                .radius(1000)
+                .radius(2)
                 .location(49.210333, 16.614792)
                 .victoryPoints(100)
                 .simplePuzzle()
@@ -63,7 +63,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .taskDone();
         
         builder.addGPSTask("5")
-                .radius(1000)
+                .radius(2)
                 .location(49.216542, 16.314825)
                 .victoryPoints(50)
                 .simplePuzzle()
@@ -76,7 +76,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
         builder.addGPSTask("6")
                 .location(49.210874, 16.614810)
                 .victoryPoints(100)
-                .radius(1000)
+                .radius(2)
                 .imageSelectPuzzle()
                 .addImage(R.drawable.plaats2_1, false)
                 .addImage(R.drawable.plaats2_fout, true)
@@ -87,7 +87,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .taskDone();
 
         builder.addGPSTask("7")
-                .radius(1000)
+                .radius(2)
                 .location( 49.210696, 16.616744)
                 .victoryPoints(50)
                 .simplePuzzle()
@@ -98,7 +98,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .taskDone();
 
         builder.addGPSTask("8")
-                .radius(1000)
+                .radius(2)
                 .location( 49.211632, 16.617428)
                 .victoryPoints(100)
                 .simplePuzzle()
@@ -111,7 +111,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .taskDone();
 
         builder.addGPSTask("9")
-                .radius(1000)
+                .radius(2)
                 .location( 49.212015, 16.616999)
                 .victoryPoints(50)
                 .simplePuzzle()
@@ -132,6 +132,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
 
         builder.addCodeTask("10")
                 .qr("http://techdrev.ldf.mendelu.cz/cz/vyma/pedo/loma/pdk-p/p090")
+                .location( 49.212015, 16.616999)
                 .victoryPoints(50)
                 .taskDone();
 
