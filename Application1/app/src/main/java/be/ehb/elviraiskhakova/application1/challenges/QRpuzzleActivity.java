@@ -24,8 +24,6 @@ public class QRpuzzleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qrpuzzle);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +48,8 @@ public class QRpuzzleActivity extends AppCompatActivity {
             String result = QRCodeUtil.onScanResult(this, requestCode, resultCode, data);
             CodeTask codeTask = (CodeTask) currentTask;
             if (codeTask.getQR().equals(result)) {
-                // go back to map
+                storyLine.currentTask().finish(true);
+                finish();
             }
         }
     }
