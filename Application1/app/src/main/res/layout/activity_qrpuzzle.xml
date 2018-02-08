@@ -30,4 +30,14 @@
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_dialog_email" />
 
+    <ImageButton
+        android:id="@+id/qr_code_button"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/qrcode"
+        android:onClick="scanForQRCode"
+        android:layout_gravity="center"
+
+        />
+
 </android.support.design.widget.CoordinatorLayout>
