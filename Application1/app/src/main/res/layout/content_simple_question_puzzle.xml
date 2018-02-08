@@ -29,7 +29,7 @@
     android:layout_marginBottom="200dp"
     android:layout_marginRight="45dp"
     android:layout_marginLeft="45dp"
-    android:hint="Put your answer here"
+    android:hint="Write your answer here"
 
     />
 

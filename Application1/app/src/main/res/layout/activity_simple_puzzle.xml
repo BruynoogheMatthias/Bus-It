@@ -6,18 +6,6 @@
     android:layout_height="match_parent"
     tools:context="be.ehb.elviraiskhakova.application1.challenges.SimplePuzzleActivity">
 
-
     <include layout="@layout/content_simple_puzzle" />
-
-    <TextView
-        android:id="@+id/questionQR"
-        style="@style/question" />
-    <EditText
-        android:id="@+id/answerQR"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nephew's age"
-        />
-
 
 </android.support.design.widget.CoordinatorLayout>

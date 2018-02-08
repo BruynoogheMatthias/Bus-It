@@ -11,13 +11,6 @@
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_qrpuzzle" />
@@ -30,10 +23,17 @@
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_dialog_email" />
 
+    <TextView
+        android:id="@+id/question_qr"
+        style="@style/question"
+        android:layout_marginTop="40dp"
+        android:padding="10dp"
+        android:text="In the longer row of plaques, start your count from the left. Count up to nephew's age."/>
+
     <ImageButton
         android:id="@+id/qr_code_button"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:src="@drawable/qrcode"
         android:onClick="scanForQRCode"
         android:layout_gravity="center"
