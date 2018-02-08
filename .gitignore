@@ -1,4 +1,8 @@
 
+Application1/\.idea/caches/build_file_checksums\.ser
+
+Application1/\.idea/codeStyles/Project\.xml
+
 Application1/\.idea/gradle\.xml
 
 Application1/\.idea/misc\.xml
@@ -6,9 +10,5 @@ Application1/\.idea/misc\.xml
 Application1/\.idea/modules\.xml
 
 Application1/\.idea/runConfigurations\.xml
-
-Application1/\.idea/codeStyles/Project\.xml
-
-Application1/\.idea/caches/build_file_checksums\.ser
 
 Application1/gradle/wrapper/gradle-wrapper\.properties
