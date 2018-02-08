@@ -48,7 +48,8 @@ public class QRpuzzleActivity extends AppCompatActivity {
             String result = QRCodeUtil.onScanResult(this, requestCode, resultCode, data);
             CodeTask codeTask = (CodeTask) currentTask;
             if (codeTask.getQR().equals(result)) {
-                // go back to map
+                storyLine.currentTask().finish(true);
+                finish();
             }
         }
     }
