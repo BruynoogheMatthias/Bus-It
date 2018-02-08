@@ -254,6 +254,8 @@ public class MapsActivity extends FragmentActivity implements
     private void activateBeacon()
     {
         //TODO: implement
+        //remove beacon from inittask
+        // add beacon to inittask in this function.
     }
 
     protected void onResume() {
@@ -300,7 +302,6 @@ public class MapsActivity extends FragmentActivity implements
                 beaconUtil.addBeacon(definition);
             }
             if (task instanceof CodeTask) {
-                // TODO:
                 if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                     // TODO: Consider calling
                     //    ActivityCompat#requestPermissions
