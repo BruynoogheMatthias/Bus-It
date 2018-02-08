@@ -22,19 +22,17 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .simplePuzzle()
                 .question("Which animal likes to be here?")
                 .answer("Rabbit")
-                .puzzleTime(300000)
                 .puzzleDone()
                 .taskDone();
 
         builder.addGPSTask("2")
                 .radius(1000)
                 .location(49.210333, 16.614792)
-                .victoryPoints(50)
+                .victoryPoints(100)
                 .simplePuzzle()
                 .question("How much does a water, a apple juice and a Fanta costs in the vending machine here? (in crones)")
                 .answer("61")
                 .hint("Hint here") //no images possible, just strings , for image use .hint("imagename")
-                .puzzleTime(300000)
                 .puzzleDone()
                 .taskDone();
 
@@ -61,9 +59,9 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .question("How much does a water, a apple juice and a Fanta costs in the vending machine here? (in crones)")
                 .answer("61")
                 .hint("Hint here") //no images possible, just strings , for image use .hint("imagename")
-                .puzzleTime(300000)
                 .puzzleDone()
                 .taskDone();
+        
         builder.addGPSTask("5")
                 .radius(1000)
                 .location(49.216542, 16.314825)
@@ -73,7 +71,6 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .answer("Ceepus")
                 .answer("ceepus")
                 .hint("Hint here") //no images possible, just strings , for image use .hint("imagename")
-                .puzzleTime(300000)
                 .puzzleDone()
                 .taskDone();
         builder.addGPSTask("6")
@@ -97,14 +94,13 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .question("How many years did J.C. Mendel live?")
                 .answer("62")
                 .hint("Hint here") //no images possible, just strings , for image use .hint("imagename")
-                .puzzleTime(300000)
                 .puzzleDone()
                 .taskDone();
 
         builder.addGPSTask("8")
                 .radius(1000)
                 .location( 49.211632, 16.617428)
-                .victoryPoints(50)
+                .victoryPoints(100)
                 .simplePuzzle()
                 .question("I have a twin brother. What is my name?")
                 .answer("Posyp")
@@ -140,14 +136,8 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .taskDone();
 
 
-
         builder.addBeaconTask("11").location(49.210542, 16.614825)
-                .beacon(5635, 2481)
-                .choicePuzzle()
-                .question("What is the best city in the world?")
-                .addChoice("Brno", true)
-                .addChoice("Prague", false)
-                .puzzleDone()
+                .beacon(52307, 40318)
                 .taskDone();
     }
 }
