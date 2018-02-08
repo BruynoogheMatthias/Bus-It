@@ -56,7 +56,9 @@ public class QrSimplePuzzleActivity extends AppCompatActivity {
             Intent intent = new Intent(this, QRpuzzleActivity.class);
             startActivity(intent);
         } else {
+            storyLine.currentTask().finish(false);
             Toast.makeText(this, "Wrong answer", Toast.LENGTH_SHORT).show();
+            finish();
             // wrong answer
         }
     }

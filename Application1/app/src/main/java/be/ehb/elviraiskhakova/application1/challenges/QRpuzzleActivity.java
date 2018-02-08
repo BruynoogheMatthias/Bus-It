@@ -50,8 +50,11 @@ public class QRpuzzleActivity extends AppCompatActivity {
             if (codeTask.getQR().equals(result)) {
                 storyLine.currentTask().finish(true);
                 finish();
+            } else if (!codeTask.getQR().equals(result)) {
+                storyLine.currentTask().finish(false);
+                finish();
             }
         }
-    }
 
+    }
 }

@@ -105,6 +105,8 @@ public class ImageSelectActivity extends AppCompatActivity {
                         // wrong answer
                         Toast.makeText(ImageSelectActivity.this, "Wrong answer"
                                 + "", Toast.LENGTH_SHORT).show();
+                        currentTask.finish(false);
+                        finish();
                     }
 
                 }

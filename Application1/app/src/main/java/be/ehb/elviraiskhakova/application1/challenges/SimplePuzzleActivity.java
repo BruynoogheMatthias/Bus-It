@@ -54,8 +54,10 @@ public class SimplePuzzleActivity extends AppCompatActivity {
             storyLine.currentTask().finish(true);
             finish();
         } else {
+            storyLine.currentTask().finish(false);
             Toast.makeText(this, "Wrong answer", Toast.LENGTH_SHORT).show();
             // wrong answer
+            finish();
         }
     }
 
