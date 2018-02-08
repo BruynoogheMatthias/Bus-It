@@ -435,10 +435,23 @@ public class MapsActivity extends FragmentActivity implements
                     while (!isInterrupted()) {
                         Thread.sleep(1000);
                         runOnUiThread(new Runnable() {
-                            int minutes = 0;
-                            int seconds = 0;
+                            int minutes = -1;
+                            int seconds = -1 ;
                             @Override
                             public void run() {
+                                if (minutes == -1 || seconds == -1){
+                                    minutes = 0;
+                                    seconds = 0;
+                                }
+
+                                seconds +=1;
+                                if (seconds == 60){
+
+                                    seconds  = 0;
+                                    minutes +=1;
+
+                            }
+
 
                                 String curTime = String.format("%02d : %02d",  minutes, seconds);
                                 clock.setText(curTime); //change clock to your textview
