@@ -1,4 +1,4 @@
-package be.ehb.elviraiskhakova.application1.challenges;
+package be.ehb.elviraiskhakova.application1;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -7,14 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import be.ehb.elviraiskhakova.application1.R;
-
-public class SimpleQuestionPuzzleActivity extends AppCompatActivity {
+public class FalseWinScreenActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_simple_question_puzzle);
+        setContentView(R.layout.activity_false_win_screen);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
