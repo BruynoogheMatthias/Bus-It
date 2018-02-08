@@ -20,3 +20,5 @@ Application1/gradle/wrapper/gradle-wrapper\.jar
 Application1/gradlew
 
 Application1/gradlew\.bat
+
+Application1/engine/build\.gradle
