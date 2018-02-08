@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
@@ -17,6 +18,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.os.SystemClock;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -75,6 +77,11 @@ public class MapsActivity extends FragmentActivity implements
     private LatLngBounds.Builder builder;
     private TextView tvPoints;
     private TextView clock;
+
+
+    long MillisecondTime, StartTime, TimeBuff, UpdateTime = 0L ;
+    int Seconds, Minutes, MilliSeconds ;
+    Handler handler = new Handler() ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -426,45 +433,38 @@ public class MapsActivity extends FragmentActivity implements
         mMap.animateCamera(cameraUpdate);
     }
 
-    private void startClock(){
-        Thread t = new Thread() {
 
-            @Override
-            public void run() {
-                try {
-                    while (!isInterrupted()) {
-                        Thread.sleep(1000);
-                        runOnUiThread(new Runnable() {
-                            int minutes = -1;
-                            int seconds = -1 ;
-                            @Override
-                            public void run() {
-                                if (minutes == -1 || seconds == -1){
-                                    minutes = 0;
-                                    seconds = 0;
-                                }
-
-                                seconds +=1;
-                                if (seconds == 60){
-
-                                    seconds  = 0;
-                                    minutes +=1;
-
-                            }
+    private void startClock() {
+        StartTime = SystemClock.uptimeMillis();
+        handler.postDelayed(runnable, 0);
 
 
-                                String curTime = String.format("%02d : %02d",  minutes, seconds);
-                                clock.setText(curTime); //change clock to your textview
-                            }
-                        });
-                    }
-                } catch (InterruptedException e) {
-                }
-            }
-        };
 
-        t.start();
     }
+
+    public Runnable runnable = new Runnable() {
+
+        public void run() {
+
+            MillisecondTime = SystemClock.uptimeMillis() - StartTime;
+
+            UpdateTime = TimeBuff + MillisecondTime;
+
+            Seconds = (int) (UpdateTime / 1000);
+
+            Minutes = Seconds / 60;
+
+            Seconds = Seconds % 60;
+
+            MilliSeconds = (int) (UpdateTime % 1000);
+
+            clock.setText("" + Minutes + ":"
+                    + String.format("%02d", Seconds));
+
+            handler.postDelayed(this, 0);
+        }
+
+    };
 
 }
 
