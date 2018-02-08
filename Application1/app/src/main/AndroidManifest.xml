@@ -73,6 +73,10 @@
         <activity
             android:name=".MapsGameActivity"
             android:label="@string/title_activity_maps_game" />
+        <activity
+            android:name=".PhotoMultyQuestion"
+            android:label="@string/title_activity_photo_multy_question"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -13,4 +13,5 @@
     <string name="title_activity_beacon_guide">Map</string>
     <string name="title_activity_maps_game">Map</string>
     <string name="title_activity_false_win_screen">FalseWinScreenActivity</string>
+    <string name="title_activity_photo_multy_question">PhotoMultyQuestion</string>
 </resources>
