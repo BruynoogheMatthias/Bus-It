@@ -71,8 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 "- Get 500 points to finish the game\n" +
                 "- Get points by completing puzzles at the markers\n"+
                 "- Blue Marker = 50 points\n" +
-                "- Yellow Marker = 100 points\n" +
-                "- Red Marker = 150 points\n"
+                "- Yellow Marker = 100 points"
         );
         builder.setCancelable(true);
         builder.setPositiveButton("Close", new DialogInterface.OnClickListener() {
