@@ -100,6 +100,8 @@ public class ImageSelectActivity extends AppCompatActivity {
                     if (puzzle.getAnswerForImage(holder.getAdapterPosition())) {
                         //correct answer
                         currentTask.finish(true);
+                        Toast.makeText(ImageSelectActivity.this, "Correct answer"
+                                + "", Toast.LENGTH_SHORT).show();
                         finish();
                     } else {
                         // wrong answer
