@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Toast;
 
 import be.ehb.elviraiskhakova.application1.R;
 import cz.mendelu.busItWeek.library.CodeTask;
@@ -49,9 +50,16 @@ public class QRpuzzleActivity extends AppCompatActivity {
             CodeTask codeTask = (CodeTask) currentTask;
             if (codeTask.getQR().equals(result)) {
                 storyLine.currentTask().finish(true);
+                Toast.makeText(QRpuzzleActivity.this, "Correct answer"
+                        + "", Toast.LENGTH_SHORT).show();
+                finish();
+            } else if (!codeTask.getQR().equals(result)) {
+                storyLine.currentTask().finish(false);
+                Toast.makeText(QRpuzzleActivity.this, "Wrong answer"
+                        + "", Toast.LENGTH_SHORT).show();
                 finish();
             }
         }
-    }
 
+    }
 }

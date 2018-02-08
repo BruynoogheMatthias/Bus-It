@@ -52,10 +52,13 @@ public class SimplePuzzleActivity extends AppCompatActivity {
         if (userAnswer.equalsIgnoreCase(correctAnswer)) {
             // correct answer
             storyLine.currentTask().finish(true);
+            Toast.makeText(this, "Correct answer", Toast.LENGTH_SHORT).show();
             finish();
         } else {
+            storyLine.currentTask().finish(false);
             Toast.makeText(this, "Wrong answer", Toast.LENGTH_SHORT).show();
             // wrong answer
+            finish();
         }
     }
 

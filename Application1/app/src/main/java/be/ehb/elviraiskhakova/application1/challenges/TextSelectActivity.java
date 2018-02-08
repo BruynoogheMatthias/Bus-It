@@ -93,6 +93,7 @@ public class TextSelectActivity extends AppCompatActivity {
                     if (puzzle.getAnswerForChoice(holder.getAdapterPosition())) {
                         //correct answer
                         currentTask.finish(true);
+                        Toast.makeText(TextSelectActivity.this, "Correct answer", Toast.LENGTH_SHORT).show();
                         finish();
                     } else {
                         // wrong answer
