@@ -266,6 +266,7 @@ public class MapsActivity extends FragmentActivity implements
         // add beacon to inittask in this function.
         while (!currentTask.getName().equals("10")) {
             currentTask.skip();
+            currentTask = storyLine.currentTask();
         }
     }
 
