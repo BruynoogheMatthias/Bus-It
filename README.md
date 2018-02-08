@@ -30,5 +30,6 @@ Puzzles
 -Find a place based on a picture (popup challenge after 10 minutes, 5 minutes time to complete)
 
 
+
 Optional:
 - points leaderboard
