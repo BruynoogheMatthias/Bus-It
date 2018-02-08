@@ -394,7 +394,7 @@ public class MapsActivity extends FragmentActivity implements
     }
 
     private void zoomToNewTask(LatLng position) {
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(position, 15);
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(position, 21);
         mMap.animateCamera(cameraUpdate);
     }
 
