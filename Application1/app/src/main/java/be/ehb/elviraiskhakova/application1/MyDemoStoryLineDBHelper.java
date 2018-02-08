@@ -25,20 +25,9 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .puzzleDone()
                 .taskDone();
 
+
+
         builder.addGPSTask("2")
-                .radius(2)
-                .location(49.210333, 16.614792)
-                .victoryPoints(100)
-                .simplePuzzle()
-                .question("How much does a water, a apple juice and a Fanta costs in the vending machine here? (in crones)")
-                .answer("61")
-                .hint("Hint here") //no images possible, just strings , for image use .hint("imagename")
-                .puzzleDone()
-                .taskDone();
-
-
-
-        builder.addGPSTask("3")
                 .location(49.210226, 16.614987)
                 .victoryPoints(50)
                 .radius(2)
@@ -51,7 +40,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .puzzleDone()
                 .taskDone();
 
-        builder.addGPSTask("4")
+        builder.addGPSTask("3")
                 .radius(2)
                 .location(49.210333, 16.614792)
                 .victoryPoints(100)
@@ -62,7 +51,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .puzzleDone()
                 .taskDone();
         
-        builder.addGPSTask("5")
+        builder.addGPSTask("4")
                 .radius(2)
                 .location(49.216542, 16.314825)
                 .victoryPoints(50)
@@ -73,7 +62,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .hint("Hint here") //no images possible, just strings , for image use .hint("imagename")
                 .puzzleDone()
                 .taskDone();
-        builder.addGPSTask("6")
+        builder.addGPSTask("5")
                 .location(49.210874, 16.614810)
                 .victoryPoints(100)
                 .radius(2)
@@ -86,7 +75,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .puzzleDone()
                 .taskDone();
 
-        builder.addGPSTask("7")
+        builder.addGPSTask("6")
                 .radius(2)
                 .location( 49.210696, 16.616744)
                 .victoryPoints(50)
@@ -97,7 +86,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .puzzleDone()
                 .taskDone();
 
-        builder.addGPSTask("8")
+        builder.addGPSTask("7")
                 .radius(2)
                 .location( 49.211632, 16.617428)
                 .victoryPoints(100)
@@ -110,7 +99,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .puzzleDone()
                 .taskDone();
 
-        builder.addGPSTask("9")
+        builder.addGPSTask("8")
                 .radius(2)
                 .location( 49.212015, 16.616999)
                 .victoryPoints(50)
@@ -126,14 +115,15 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
 
 
 
-        builder.addCodeTask("10")
+        builder.addCodeTask("9")
                 .qr("http://techdrev.ldf.mendelu.cz/cz/vyma/pedo/loma/pdk-p/p090")
                 .location( 49.212015, 16.616999)
                 .victoryPoints(50)
                 .taskDone();
 
 
-        builder.addBeaconTask("11").location(49.210542, 16.614825)
+        builder.addBeaconTask("10")
+                .location(49.210542, 16.614825)
                 .beacon(52307, 40318)
                 .taskDone();
     }
