@@ -67,11 +67,12 @@
             android:label="@string/title_activity_picture"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".BeaconGuideActivity"
-            android:label="@string/title_activity_beacon_guide" />
+            android:name=".FalseWinScreenActivity"
+            android:label="@string/title_activity_beacon_guide"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MapsGameActivity"
-            android:label="@string/title_activity_maps_game"></activity>
+            android:label="@string/title_activity_maps_game" />
     </application>
 
 </manifest>

@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SimpleQuestionPuzzleActivity">
+    tools:context=".FalseWinScreenActivity">
 
 
 
-    <include layout="@layout/content_simple_question_puzzle" />
+    <include layout="@layout/content_false_win_screen" />
 
 
 </android.support.design.widget.CoordinatorLayout>
