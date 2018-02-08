@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -32,6 +33,9 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.maps.android.SphericalUtil;
 
+import org.w3c.dom.Text;
+
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -70,6 +74,7 @@ public class MapsActivity extends FragmentActivity implements
     private ImageButton qrButton;
     private LatLngBounds.Builder builder;
     private TextView tvPoints;
+    private TextView clock;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +101,7 @@ public class MapsActivity extends FragmentActivity implements
 
         qrButton = findViewById(R.id.qr_code_button);
         tvPoints = findViewById(R.id.tvPoints);
+        clock = findViewById(R.id.clock);
     }
 
 
@@ -130,6 +136,21 @@ public class MapsActivity extends FragmentActivity implements
         mMap.getUiSettings().setMyLocationButtonEnabled(true);
 
         mMap.setOnMarkerClickListener(this);
+
+        //Snackbar snackbar = Snackbar.make(this.getWindow().getDecorView().getRootView(), "Welcome to AndroidHive", Snackbar.LENGTH_LONG);
+        //snackbar.show();
+
+        Snackbar.make(this.getWindow().getDecorView().getRootView(), "Go to the first GPS pin", Snackbar.LENGTH_LONG)
+                .setAction("guide", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //
+                    }
+                })
+                .setDuration(20000)
+                .setActionTextColor(getResources().getColor(R.color.colorAccent))
+                .show();
+        startClock();
     }
 
     @Override
@@ -226,7 +247,13 @@ public class MapsActivity extends FragmentActivity implements
                 totalPoints += task.getVictoryPoints();
             }
         }
+        if(totalPoints >= 500){activateBeacon();}
         return totalPoints;
+    }
+
+    private void activateBeacon()
+    {
+        //TODO: implement
     }
 
     protected void onResume() {
@@ -396,6 +423,33 @@ public class MapsActivity extends FragmentActivity implements
     private void zoomToNewTask(LatLng position) {
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(position, 21);
         mMap.animateCamera(cameraUpdate);
+    }
+
+    private void startClock(){
+        Thread t = new Thread() {
+
+            @Override
+            public void run() {
+                try {
+                    while (!isInterrupted()) {
+                        Thread.sleep(1000);
+                        runOnUiThread(new Runnable() {
+                            int minutes = 0;
+                            int seconds = 0;
+                            @Override
+                            public void run() {
+
+                                String curTime = String.format("%02d : %02d",  minutes, seconds);
+                                clock.setText(curTime); //change clock to your textview
+                            }
+                        });
+                    }
+                } catch (InterruptedException e) {
+                }
+            }
+        };
+
+        t.start();
     }
 
 }
