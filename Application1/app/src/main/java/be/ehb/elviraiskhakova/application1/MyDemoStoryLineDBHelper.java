@@ -10,15 +10,15 @@ import cz.mendelu.busItWeek.library.builder.StoryLineBuilder;
 public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
 
     public MyDemoStoryLineDBHelper() {
-        super(54);
+        super(55);
     }
 
     @Override
     protected void onCreate(StoryLineBuilder builder) {
       builder.addGPSTask("1")
-                .radius(5)
+                .radius(5000)
                 .location(49.210967, 16.616488)
-                .victoryPoints(50)
+                .victoryPoints(500)
                 .simplePuzzle()
                 .question("Which animal likes to be here?")
                 .answer("Rabbit")

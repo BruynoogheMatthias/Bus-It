@@ -79,9 +79,9 @@ public class MapsActivity extends FragmentActivity implements
     private TextView clock;
 
 
-    long MillisecondTime, StartTime, TimeBuff, UpdateTime = 0L ;
-    int Seconds, Minutes, MilliSeconds ;
-    Handler handler = new Handler() ;
+    long MillisecondTime, StartTime, TimeBuff, UpdateTime = 0L;
+    int Seconds, Minutes, MilliSeconds;
+    Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -249,20 +249,24 @@ public class MapsActivity extends FragmentActivity implements
 
     private int getTotalPoints() {
         int totalPoints = 0;
-        for(Task task : storyLine.taskList()) {
-            if(task.getTaskStatus() == TaskStatus.SUCCESS) {
+        for (Task task : storyLine.taskList()) {
+            if (task.getTaskStatus() == TaskStatus.SUCCESS) {
                 totalPoints += task.getVictoryPoints();
             }
         }
-        if(totalPoints >= 500){activateBeacon();}
+        if (totalPoints >= 500) {
+            activateBeacon();
+        }
         return totalPoints;
     }
 
-    private void activateBeacon()
-    {
+    private void activateBeacon() {
         //TODO: implement
         //remove beacon from inittask
         // add beacon to inittask in this function.
+        while (!currentTask.getName().equals("10")) {
+            currentTask.skip();
+        }
     }
 
     protected void onResume() {
@@ -437,7 +441,6 @@ public class MapsActivity extends FragmentActivity implements
     private void startClock() {
         StartTime = SystemClock.uptimeMillis();
         handler.postDelayed(runnable, 0);
-
 
 
     }
