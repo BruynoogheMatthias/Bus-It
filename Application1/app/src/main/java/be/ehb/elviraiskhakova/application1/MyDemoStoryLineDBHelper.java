@@ -107,7 +107,8 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .question("5 years ago Ann was 5 times as old as her nephew.\n" +
                         "\n" +
                         "In 5 years Ann's age will be 8 less than 3 times her nephew's age at that time. \n" +
-                        "What is her nephew's age?\n")
+                        "What is her nephew's age?\n"+ "When you have the answer, use it at this location. \n" +
+                        "In the longer row, start your count from the left.")
                 .answer("11")
                 .hint("Hint here") //no images possible, just strings , for image use .hint("imagename")
                 .puzzleDone()
