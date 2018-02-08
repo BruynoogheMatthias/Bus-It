@@ -1,5 +1,7 @@
 package be.ehb.elviraiskhakova.application1;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         storyLine = StoryLine.open(this, MyDemoStoryLineDBHelper.class);
+        guide(this.getCurrentFocus());
 
 
     }
@@ -58,6 +61,27 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "User clicked the start button");
         Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
+    }
+
+    public void guide(View view)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Guide");
+        builder.setMessage("Rules:\n\n" +
+                "- Get 500 points \n" +
+                "- Best time wins\n" +
+                "- 3\n" +
+                "__________\n" +
+                "- \n"
+        );
+        builder.setCancelable(true);
+        builder.setPositiveButton("Close", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+                dialog.dismiss();
+            }
+        });
+        builder.create().show();
     }
 
     @Override
