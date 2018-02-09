@@ -10,13 +10,14 @@ import cz.mendelu.busItWeek.library.builder.StoryLineBuilder;
 public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
 
     public MyDemoStoryLineDBHelper() {
-        super(59);
+        super(72);
+
     }
 
     @Override
     protected void onCreate(StoryLineBuilder builder) {
-      builder.addGPSTask("1")
-                .radius(500)
+        builder.addGPSTask("1")
+                .radius(5)
                 .location(49.210967, 16.616488)
                 .victoryPoints(50)
                 .simplePuzzle()
@@ -25,12 +26,10 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .puzzleDone()
                 .taskDone();
 
-
-/*
         builder.addGPSTask("2")
                 .location(49.210226, 16.614987)
-                .victoryPoints(5)
-                .radius(50)
+                .victoryPoints(50)
+                .radius(5)
                 .imageSelectPuzzle()
                 .addImage(R.drawable.plaats1_1, false)
                 .addImage(R.drawable.plaats1_2, false)
@@ -41,7 +40,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .taskDone();
 
         builder.addGPSTask("3")
-                .radius(2)
+                .radius(5)
                 .location(49.210333, 16.614792)
                 .victoryPoints(100)
                 .simplePuzzle()
@@ -52,8 +51,8 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .taskDone();
         
         builder.addGPSTask("4")
-                .radius(2)
-                .location(49.216542, 16.314825)
+                .radius(5)
+                .location(49.210490, 16.615230)
                 .victoryPoints(50)
                 .simplePuzzle()
                 .question("Who will be playing on Saturday at 15u15 on the Erasmus days?")
@@ -66,7 +65,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
         builder.addGPSTask("5")
                 .location(49.210874, 16.614810)
                 .victoryPoints(100)
-                .radius(2)
+                .radius(5)
                 .imageSelectPuzzle()
                 .addImage(R.drawable.plaats2_1, false)
                 .addImage(R.drawable.plaats2_fout, true)
@@ -77,7 +76,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .taskDone();
 
         builder.addGPSTask("6")
-                .radius(2)
+                .radius(5)
                 .location( 49.210696, 16.616744)
                 .victoryPoints(50)
                 .simplePuzzle()
@@ -88,7 +87,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .taskDone();
 
         builder.addGPSTask("7")
-                .radius(2)
+                .radius(5)
                 .location( 49.211632, 16.617428)
                 .victoryPoints(100)
                 .simplePuzzle()
@@ -102,8 +101,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
 
         builder.addGPSTask("8")
                 .radius(5)
-               // .location(49.209622, 16.614988)
-               .location( 49.212015, 16.616999)
+                .location( 49.212015, 16.616999)
                 .victoryPoints(50)
                 .simplePuzzle()
                 .question("5 years ago Ann was 5 times as old as her nephew.\n" +
@@ -115,20 +113,18 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .puzzleDone()
                 .taskDone();
 
-/*
+        /*
         builder.addCodeTask("9")
-                .qr("http://techdrev.ldf.mendelu.cz/cz/vyma/pedo/loma/pdk-p/p090")
-               .location( 49.212015, 16.616999)
-               // .location(49.209622, 16.614988)
+                .qr("http://techdrev.ldf.mendelu.cz/cz/vyma/pedo/loma/pdk-p/p076")
+                //.location(49.212015, 16.616999)
+                .location( 49.212015, 16.616999)
                 .victoryPoints(50)
                 .taskDone();
 
-
-        builder.addBeaconTask("9")
+/*        builder.addBeaconTask("10")
                 .location(49.210542, 16.614825)
                 .beacon(52307, 40318)
                 .taskDone();
-
                 */
     }
 }
