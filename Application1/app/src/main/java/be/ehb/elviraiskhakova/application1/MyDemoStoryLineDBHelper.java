@@ -117,7 +117,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
 
 /*
         builder.addCodeTask("9")
-                .qr("http://techdrev.ldf.mendelu.cz/cz/vyma/pedo/loma/pdk-p/p090")
+                .qr("http://techdrev.ldf.mendelu.cz/cz/vyma/pedo/loma/pdk-p/p076")
                .location( 49.212015, 16.616999)
                // .location(49.209622, 16.614988)
                 .victoryPoints(50)

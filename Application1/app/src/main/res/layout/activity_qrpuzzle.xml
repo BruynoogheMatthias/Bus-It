@@ -29,7 +29,7 @@
         android:layout_marginTop="40dp"
         android:padding="10dp"
         android:textAlignment="center"
-        android:text="In the longer row of plaques, start your count from the left. Count up to nephew's age."/>
+        android:text="In the longer row of plaques, start your count from the left. Count up to nephew's age minus 2."/>
 
     <ImageButton
         android:id="@+id/qr_code_button"
