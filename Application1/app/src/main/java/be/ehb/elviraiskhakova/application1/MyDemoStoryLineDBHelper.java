@@ -10,13 +10,13 @@ import cz.mendelu.busItWeek.library.builder.StoryLineBuilder;
 public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
 
     public MyDemoStoryLineDBHelper() {
-        super(56);
+        super(59);
     }
 
     @Override
     protected void onCreate(StoryLineBuilder builder) {
       builder.addGPSTask("1")
-                .radius(5)
+                .radius(500)
                 .location(49.210967, 16.616488)
                 .victoryPoints(50)
                 .simplePuzzle()
@@ -26,7 +26,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .taskDone();
 
 
-
+/*
         builder.addGPSTask("2")
                 .location(49.210226, 16.614987)
                 .victoryPoints(5)
@@ -122,11 +122,13 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                // .location(49.209622, 16.614988)
                 .victoryPoints(50)
                 .taskDone();
-*/
+
 
         builder.addBeaconTask("9")
                 .location(49.210542, 16.614825)
                 .beacon(52307, 40318)
                 .taskDone();
+
+                */
     }
 }

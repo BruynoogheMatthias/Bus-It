@@ -261,6 +261,7 @@ public class MapsActivity extends FragmentActivity implements
                 currentTask = storyLine.currentTask();
             }
             Intent intent = new Intent(this, FinishActivity.class);
+            intent.putExtra("TIME",clock.getText());
             startActivity(intent);
             //activateBeacon();
         }
@@ -291,6 +292,7 @@ public class MapsActivity extends FragmentActivity implements
         if (currentTask == null) {
             // finish the app, game is over
             Intent intent = new Intent(this, FinishActivity.class);
+            intent.putExtra("TIME",clock.getText());
             startActivity(intent);
         } else {
             initializeListeners();

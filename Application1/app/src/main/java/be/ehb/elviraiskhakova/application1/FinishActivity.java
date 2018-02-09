@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 
 import nl.dionsegijn.konfetti.KonfettiView;
 import nl.dionsegijn.konfetti.models.Shape;
@@ -13,12 +14,17 @@ import nl.dionsegijn.konfetti.models.Size;
 
 public class FinishActivity extends AppCompatActivity {
 
+    private TextView points;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finish);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        points = findViewById(R.id.tvPoints);
+        points.setText(getIntent().getStringExtra("TIME"));
 
         final KonfettiView konfettiView = (KonfettiView)findViewById(R.id.konfettiView);
 
@@ -48,6 +54,7 @@ public class FinishActivity extends AppCompatActivity {
                         .stream(300, 5000L);
             }
         });
+
     }
 
 }
