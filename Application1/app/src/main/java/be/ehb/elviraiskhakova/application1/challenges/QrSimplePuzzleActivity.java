@@ -45,7 +45,6 @@ public class QrSimplePuzzleActivity extends AppCompatActivity {
 
     }
 
-
     public void answerQuestion(View view) {
         String userAnswer = answer.getText().toString();
         String correctAnswer = puzzle.getAnswer();

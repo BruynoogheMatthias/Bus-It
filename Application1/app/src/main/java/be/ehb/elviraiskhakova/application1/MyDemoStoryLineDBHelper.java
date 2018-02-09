@@ -10,14 +10,14 @@ import cz.mendelu.busItWeek.library.builder.StoryLineBuilder;
 public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
 
     public MyDemoStoryLineDBHelper() {
-        super(72);
+        super(75);
 
     }
 
     @Override
     protected void onCreate(StoryLineBuilder builder) {
         builder.addGPSTask("1")
-                .radius(5)
+                .radius(10)
                 .location(49.210967, 16.616488)
                 .victoryPoints(50)
                 .simplePuzzle()
@@ -29,7 +29,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
         builder.addGPSTask("2")
                 .location(49.210226, 16.614987)
                 .victoryPoints(50)
-                .radius(5)
+                .radius(10)
                 .imageSelectPuzzle()
                 .addImage(R.drawable.plaats1_1, false)
                 .addImage(R.drawable.plaats1_2, false)
@@ -40,7 +40,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .taskDone();
 
         builder.addGPSTask("3")
-                .radius(5)
+                .radius(10)
                 .location(49.210333, 16.614792)
                 .victoryPoints(100)
                 .simplePuzzle()
@@ -51,7 +51,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .taskDone();
         
         builder.addGPSTask("4")
-                .radius(5)
+                .radius(10)
                 .location(49.210490, 16.615230)
                 .victoryPoints(50)
                 .simplePuzzle()
@@ -65,7 +65,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
         builder.addGPSTask("5")
                 .location(49.210874, 16.614810)
                 .victoryPoints(100)
-                .radius(5)
+                .radius(10)
                 .imageSelectPuzzle()
                 .addImage(R.drawable.plaats2_1, false)
                 .addImage(R.drawable.plaats2_fout, true)
@@ -76,7 +76,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .taskDone();
 
         builder.addGPSTask("6")
-                .radius(5)
+                .radius(10)
                 .location( 49.210696, 16.616744)
                 .victoryPoints(50)
                 .simplePuzzle()
@@ -87,7 +87,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .taskDone();
 
         builder.addGPSTask("7")
-                .radius(5)
+                .radius(10)
                 .location( 49.211632, 16.617428)
                 .victoryPoints(100)
                 .simplePuzzle()
@@ -100,7 +100,7 @@ public class MyDemoStoryLineDBHelper extends StoryLineDatabaseHelper {
                 .taskDone();
 
         builder.addGPSTask("8")
-                .radius(5)
+                .radius(10)
                 .location( 49.212015, 16.616999)
                 .victoryPoints(50)
                 .simplePuzzle()
