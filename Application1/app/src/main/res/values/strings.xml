@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Application1</string>
+    <string name="app_name">Campus Run</string>
     <string name="action_settings">Settings</string>
     <string name="introduction_title">Campus Race</string>
     <string name="start">START</string>
