@@ -255,19 +255,34 @@ public class MapsActivity extends FragmentActivity implements
             }
         }
         if (totalPoints >= 500) {
-            activateBeacon();
+            while(currentTask != null)
+            {
+                currentTask.skip();
+                currentTask = storyLine.currentTask();
+            }
+            Intent intent = new Intent(this, FinishActivity.class);
+            startActivity(intent);
+            //activateBeacon();
         }
         return totalPoints;
     }
 
+
+
     private void activateBeacon() {
+        currentTask = null;
         //TODO: implement
+        /*
         //remove beacon from inittask
         // add beacon to inittask in this function.
         while (!currentTask.getName().equals("10")) {
             currentTask.skip();
             currentTask = storyLine.currentTask();
+
         }
+        Log.d("TAG", "hierrrrrrrrrrrrr");
+        beaconUtil.startRanging();
+        */
     }
 
     protected void onResume() {
