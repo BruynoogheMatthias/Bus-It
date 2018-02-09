@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
+import be.ehb.elviraiskhakova.application1.MyDemoStoryLineDBHelper;
 import be.ehb.elviraiskhakova.application1.R;
 import cz.mendelu.busItWeek.library.CodeTask;
 import cz.mendelu.busItWeek.library.StoryLine;
@@ -34,6 +35,8 @@ public class QRpuzzleActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        storyLine = StoryLine.open(this, MyDemoStoryLineDBHelper.class);
     }
 
     public void scanForQRCode(View view) {
